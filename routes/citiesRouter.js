@@ -9,5 +9,5 @@ router
     .post('/create', cities.create)
     .put('/update', cities.update)
     .patch('/patch', cities.patch)
-    .delete('/delete', cities.delete)
+    .delete('/delete/:name', cities.delete)
 module.exports = router
