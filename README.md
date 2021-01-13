@@ -27,7 +27,7 @@ Actions:
 
 In the case of the **POST** for the state I included an optional **API KEY** that can be added in the authorization headers, this will display that we performed of an _authorized action_ (check the middleware to see how does it works).
 
-**CREATE AN .env FILE WITH THE FOLLOWING FIELDS TO RUN THE CODE CORRECTLY**
+**CREATE AN .env FILE WITH THE FOLLOWING FIELDS TO RUN THE CODE CORRECTLY**  
 **YOU CAN CHANGE THE VALUES AS YOU WISH**
 
 ```
