@@ -18,6 +18,6 @@ middleware(app)
 
 app.use('/', routes)
 
-app.listen(port, () => {
-    console.log("Listening on port ", port)
-})
+const server = app.listen(port)
+
+module.exports = server

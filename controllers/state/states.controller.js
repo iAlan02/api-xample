@@ -1,4 +1,4 @@
-const states = require('../utils/states.json')
+const states = require('../../utils/states.json')
 
 module.exports = {
     getAll: (req, res) => {

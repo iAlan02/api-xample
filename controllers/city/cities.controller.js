@@ -1,4 +1,4 @@
-const cities = require('../utils/cities.json')
+const cities = require('../../utils/cities.json')
 
 module.exports = {
     getAll: (req, res) => {
@@ -9,9 +9,9 @@ module.exports = {
         const notFound = "City not found"
         const cityName = req.params.name
 
-        cities.forEach(s => {
-            if (s.name === cityName) {
-                city = s
+        cities.forEach(c => {
+            if (c.name === cityName) {
+                city = c
             }
         })
         if (!city) {
@@ -29,7 +29,7 @@ module.exports = {
     patch: (req, res) => {
         res.status(200).send("Patched " + JSON.stringify(req.body))
     },
-    delete: (req, res) => {
+    remove: (req, res) => {
         let city = {}
         const notFound = "City not found"
         const cityName = req.params.name
