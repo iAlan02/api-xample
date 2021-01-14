@@ -4,3 +4,7 @@ node_modules/
 
 # dotenv environment variables file
 .env
+
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
