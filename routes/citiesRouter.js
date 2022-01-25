@@ -1,13 +1,13 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express') // express
+const router = express.Router() // express router
 
-const cities = require('../controllers/city/cities.controller')
+const cities = require('../controllers/city/cities.controller') // cities controller
 
-router
-    .get('/getAll', cities.getAll)
-    .get('/getByName/:name', cities.getByName)
-    .post('/create', cities.create)
-    .put('/update', cities.update)
-    .patch('/patch', cities.patch)
-    .delete('/delete/:name', cities.remove)
-module.exports = router
+router // express router
+    .get('/getAll', cities.getAll) // get all cities
+    .get('/getByName/:name', cities.getByName) // get city by name
+    .post('/create', cities.create) // create city
+    .put('/update', cities.update) // update city
+    .patch('/patch', cities.patch) // patch city
+    .delete('/delete/:name', cities.remove) // delete city
+module.exports = router // export router

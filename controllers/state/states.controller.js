@@ -1,49 +1,49 @@
-const states = require('../../utils/states.json')
+const states = require('../../utils/states.json') // states json
 
-module.exports = {
-    getAll: (req, res) => {
-        res.status(200).json(states)
+module.exports = { // export states controller
+    getAll: (req, res) => { // get all states
+        res.status(200).json(states) // send states
     },
-    getByName: (req, res) => {
-        let state = {}
-        const notFound = "State not found"
-        const stateName = req.params.name
+    getByName: (req, res) => { // get state by name
+        let state = {} // state
+        const notFound = "State not found" // not found
+        const stateName = req.params.name // state name
 
-        states.forEach(s => {
-            if (s.name === stateName) {
-                state = s
+        states.forEach(s => { // for each state
+            if (s.name === stateName) { // if state name is equal to state name
+                state = s // set state
             }
         })
-        if (!state) {
-            res.status(404).send(notFound)
+        if (!state) { // if state is not found
+            res.status(404).send(notFound) // send not found
         } else {
-            res.status(200).json(state)
+            res.status(200).json(state) // send state
         }
     },
-    create: (req, res) => {
-        res.status(201).send("Created " + JSON.stringify(req.body))
+    create: (req, res) => { // create state
+        res.status(201).send("Created " + JSON.stringify(req.body)) // send created
     },
-    update: (req, res) => {
-        res.status(200).send("Updated " + JSON.stringify(req.body))
+    update: (req, res) => { // update state
+        res.status(200).send("Updated " + JSON.stringify(req.body)) // send updated
     },
-    patch: (req, res) => {
-        res.status(200).send("Patched " + JSON.stringify(req.body))
+    patch: (req, res) => { // patch state
+        res.status(200).send("Patched " + JSON.stringify(req.body)) // send patched
     },
-    delete: (req, res) => {
-        let state = {}
-        const notFound = "State not found"
-        const stateName = req.params.name
+    delete: (req, res) => { // delete state
+        let state = {} // state
+        const notFound = "State not found" // not found
+        const stateName = req.params.name // state name
 
-        states.forEach(s => {
-            if (s.name === stateName) {
-                state = s
+        states.forEach(s => { // for each state
+            if (s.name === stateName) { // if state name is equal to state name
+                state = s // set state
             }
         })
 
-        if (!state) {
-            res.status(404).send(notFound)
-        } else {
-            res.status(200).send("Deleted " + stateName)
+        if (!state) { // if state is not found
+            res.status(404).send(notFound) // send not found
+        } else { // if state is found
+            res.status(200).send("Deleted " + stateName) // send deleted
         }
     },
 

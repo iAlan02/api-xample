@@ -1,13 +1,13 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express') // express
+const router = express.Router() // express router
 
-const states = require('../controllers/state/states.controller')
+const states = require('../controllers/state/states.controller') // states controller
 
-router
-    .get('/getAll', states.getAll)
-    .get('/getByName/:name', states.getByName)
-    .post('/create', states.create)
-    .put('/update', states.update)
-    .patch('/patch', states.patch)
-    .delete('/delete/:name', states.delete)
-module.exports = router
+router // express router
+    .get('/getAll', states.getAll) // get all states
+    .get('/getByName/:name', states.getByName) // get state by name
+    .post('/create', states.create) // create state
+    .put('/update', states.update) // update state
+    .patch('/patch', states.patch) // patch state
+    .delete('/delete/:name', states.delete) // delete state
+module.exports = router // export router
