@@ -1,0 +1,77 @@
+name: Build
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    name: Create Release
+    runs-on: eg-default
+    env:
+      APP_NAME: api-xamlple
+      RELEASE_REGISTRY: ruca93
+      AWS_REGION: us-west-1
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+
+      - name: Docker Login to Release registry
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+        env:
+          AWS_REGION: ${{ env.AWS_REGION }}
+
+      - name: Docker build and push main
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          pull: true
+          no-cache: true
+          push: true
+          tags: ${{ env.RELEASE_REGISTRY }}/api-xample:${{ github.sha }}
+
+  # deploy-qa:
+  #   name: Deploy QA
+  #   runs-on: eg-default
+  #   timeout-minutes: 15
+  #   needs: build
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v3
+  #       with:
+  #         fetch-depth: 0
+
+  #     - name: terraform plan
+  #       env:
+  #         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ARCH_ECS_DEPLOY_ACCESS_KEY_ID }}
+  #         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_ARCH_ECS_DEPLOY_SECRET_ACCESS_KEY }}
+  #       uses: actions/dflook-terraform-actions/terraform-plan@v1.34.0
+  #       with:
+  #         path: ./terraform
+  #         workspace: qa
+  #         var_file: ./terraform/qa.tfvars
+  #         variables: |
+  #           ServiceVersion="${{ github.sha }}"
+      
+  #     - name: terraform apply
+  #       env:
+  #         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ARCH_ECS_DEPLOY_ACCESS_KEY_ID }}
+  #         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_ARCH_ECS_DEPLOY_SECRET_ACCESS_KEY }}
+  #       uses: actions/dflook-terraform-actions/terraform-apply@v1.34.0
+  #       with:
+  #         path: ./terraform
+  #         workspace: qa
+  #         var_file: ./terraform/qa.tfvars
+  #         variables: |
+  #           ServiceVersion="${{ github.sha }}"
+  #         auto_approve: true
