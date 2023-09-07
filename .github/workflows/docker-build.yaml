@@ -52,7 +52,7 @@ jobs:
   #       env:
   #         AWS_ACCESS_KEY_ID: ${{ secrets.AWS__ECS_DEPLOY_ACCESS_KEY_ID }}
   #         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS__ECS_DEPLOY_SECRET_ACCESS_KEY }}
-  #       uses: dflook-terraform-actions/terraform-plan@v1.34.0
+  #       uses: dflook/terraform-plan@v1.34.0
   #       with:
   #         path: ./terraform
   #         workspace: dev
@@ -64,7 +64,7 @@ jobs:
   #       env:
   #         AWS_ACCESS_KEY_ID: ${{ secrets.AWS__ECS_DEPLOY_ACCESS_KEY_ID }}
   #         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS__ECS_DEPLOY_SECRET_ACCESS_KEY }}
-  #       uses: dflook-terraform-actions/terraform-apply@v1.34.0
+  #       uses: dflook/terraform-apply@v1.34.0
   #       with:
   #         path: ./terraform
   #         workspace: dev
