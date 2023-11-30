@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: <your-docker-image>
+        image: ruca93/api-xample
         ports:
         - containerPort: 3000
 ---
@@ -28,5 +28,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: <your-container-port>
+      targetPort: 3000
   type: LoadBalancer
