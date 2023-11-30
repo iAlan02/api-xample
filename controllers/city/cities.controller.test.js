@@ -12,7 +12,7 @@ describe('GET Endpoints', () => { // describe GET Endpoints
         done() // done
     })
     it('Should get a city by name', async(done) => { // it Should get a city by name
-        const cityName = "Tepezalá"
+        const cityName = "Aguascalientes"
         const response = await request(server).get(`/city/getByName/${cityName}`) // request
         expect(response.status).toBe(200) // expect status
         expect(response.body).toEqual(cities.find(c => { return c.name === cityName })) // expect body
@@ -74,7 +74,7 @@ describe('PATCH Endpoint', () => { // describe PATCH Endpoint
 describe('DELETE Endpoint', () => { // describe DELETE Endpoint
 
     it('Should delete a México city', async(done) => { // it Should delete a México city
-        const cityName = "Tepezalá" // city name
+        const cityName = "Aguascalientes" // city name
         const response = await request(server).delete(`/city/delete/${cityName}`) // request
         expect(response.status).toBe(200) // expect status
         expect(response.text).toEqual("Deleted " + cityName) // expect body
