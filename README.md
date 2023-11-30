@@ -77,19 +77,19 @@ The following steps assume you have an AWS account set up and have the AWS CLI i
 The API provides the following endpoints:
 For states:
 
-1. **GET /api/state/getAll**: Retrieve a list of all states in Mexico.
-2. **GET /api/state/getByName/:name**: Retrieve the details of the specified state.
-3. **POST /api/state/create**: Create a state with the data specified in the body.
-4. **PATCH /api/state/patch**: Patch a state with the data specified in the body.
-5. **PATCH /api/state/delete/:name**: Patch a state with the data specified in the body.
+1. **GET /state/getAll**: Retrieve a list of all states in Mexico.
+2. **GET /state/getByName/:name**: Retrieve the details of the specified state.
+3. **POST /state/create**: Create a state with the data specified in the body.
+4. **PATCH /state/patch**: Patch a state with the data specified in the body.
+5. **PATCH /state/delete/:name**: Patch a state with the data specified in the body.
 
 For cities:
 
-1. **GET /api/city/getAll**: Retrieve a list of all cities in Mexico.
-2. **GET /api/state/getByName/:name**: Retrieve the details of the specified cities.
-3. **POST /api/state/create**: Create a cities with the data specified in the body.
-4. **PATCH /api/state/patch**: Patch a cities with the data specified in the body.
-5. **PATCH /api/state/delete/:name**: Patch a cities with the data specified in the body.
+1. **GET /city/getAll**: Retrieve a list of all cities in Mexico.
+2. **GET /state/getByName/:name**: Retrieve the details of the specified cities.
+3. **POST /state/create**: Create a cities with the data specified in the body.
+4. **PATCH /state/patch**: Patch a cities with the data specified in the body.
+5. **PATCH /state/delete/:name**: Patch a cities with the data specified in the body.
 
 ## Response Format
 
