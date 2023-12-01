@@ -1,5 +1,5 @@
 # Build stage
-FROM arm64v8/node:20.9.0 as build
+FROM node:20 as build
 
 WORKDIR /api-xample
 
@@ -12,7 +12,7 @@ COPY . .
 RUN npm test
 
 # Production stage
-FROM arm64v8/node:20.9.0
+FROM node:20
 
 WORKDIR /api-xample
 
