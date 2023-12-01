@@ -12,7 +12,7 @@ COPY . .
 RUN npm test
 
 # Production stage
-FROM node:14
+FROM --platform=linux/arm64 node:14
 
 WORKDIR /api-xample
 
