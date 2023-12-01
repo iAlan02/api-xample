@@ -20,5 +20,7 @@ ENV API_KEY=apiKey9000
 
 EXPOSE ${PORT}:3000
 
+RUN chmod +x start.sh
+
 # Define the command to run the application
-CMD [ "node", "server.js" ]
+ENTRYPOINT [ "start.sh" ]
