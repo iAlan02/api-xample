@@ -13,4 +13,4 @@ RUN npm test
 
 EXPOSE ${PORT}
 
-CMD [ "npm", "start" ]
+ENTRYPOINT [ "npm", "start" ]
