@@ -1,5 +1,5 @@
 # Build stage
-FROM --platform=linux/amd64 node:14 as build
+FROM --platform=linux/arm64 node:14 as build
 
 WORKDIR /api-xample
 
