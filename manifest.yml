@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: ruca93/api-xample:40dcfc0
+        image: ruca93/api-xample:36f9918
         ports:
         - containerPort: 3000
 ---
