@@ -21,8 +21,6 @@ COPY --from=build /api-xample .
 ENV PORT=3000
 ENV API_KEY=apiKey9000
 
-EXPOSE ${PORT}
+EXPOSE ${PORT}:3000
 
-RUN chmod +x docker-entrypoint.sh
-
-ENTRYPOINT [ "docker-entrypoint.sh" ]
+ENTRYPOINT [ "npm", "start" ]
