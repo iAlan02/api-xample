@@ -23,4 +23,4 @@ ENV API_KEY=apiKey9000
 
 EXPOSE ${PORT}:3000
 
-ENTRYPOINT [ "npm", "start" ]
+CMD [ "node", "server.js" ]
