@@ -23,4 +23,6 @@ ENV API_KEY=apiKey9000
 
 EXPOSE ${PORT}
 
-ENTRYPOINT [ "node", "server.js" ]
+RUN chmod +x docker-entrypoint.sh
+
+ENTRYPOINT [ "docker-entrypoint.sh" ]

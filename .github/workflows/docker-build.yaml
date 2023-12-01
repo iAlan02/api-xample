@@ -40,7 +40,6 @@ jobs:
           no-cache: true
           push: true
           tags: ${{ env.RELEASE_REGISTRY }}/api-xample:${{ steps.parent.outputs.sha }}
-          platform: linux/amd64
 
   # deploy-dev:
   #   name: Deploy dev
