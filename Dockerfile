@@ -23,4 +23,4 @@ EXPOSE ${PORT}:3000
 RUN chmod +x start.sh
 
 # Define the command to run the application
-ENTRYPOINT [ "start.sh" ]
+ENTRYPOINT [ "./start.sh" ]
