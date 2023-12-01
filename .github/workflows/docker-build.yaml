@@ -26,6 +26,13 @@ jobs:
         run: |
           sed -i "s|ruca93/api-xample:.*|ruca93/api-xample:${{ github.sha }}|" manifest.yml
 
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -am "Update image tag"
+          git push
+  
       - name: Docker Login to Release registry
         uses: docker/login-action@v2
         with:
