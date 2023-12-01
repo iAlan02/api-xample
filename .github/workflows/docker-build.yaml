@@ -28,6 +28,10 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Get parent commit SHA
+        id: parent
+        run: echo "::set-output name=sha::$(git rev-parse HEAD^)"
+
       - name: Docker build and push main
         uses: docker/build-push-action@v4
         with:
@@ -35,7 +39,7 @@ jobs:
           pull: true
           no-cache: true
           push: true
-          tags: ${{ env.RELEASE_REGISTRY }}/api-xample:${{ github.sha }}
+          tags: ${{ env.RELEASE_REGISTRY }}/api-xample:${{ steps.parent.outputs.sha }}
 
   # deploy-dev:
   #   name: Deploy dev
