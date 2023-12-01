@@ -30,7 +30,7 @@ jobs:
 
       - name: Get parent commit SHA
         id: parent
-        run: echo "::set-output name=sha::$(git rev-parse HEAD^)"
+        run: echo "::set-output name=sha::$(git rev-parse --short HEAD^)"
 
       - name: Docker build and push main
         uses: docker/build-push-action@v4
