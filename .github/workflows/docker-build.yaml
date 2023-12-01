@@ -22,6 +22,10 @@ jobs:
         with:
           node-version: 14
 
+      - name: Update manifest
+        run: |
+          sed -i "s|ruca93/api-xample:.*|ruca93/api-xample:${{ github.sha }}|" manifest.yml
+
       - name: Docker Login to Release registry
         uses: docker/login-action@v2
         with:
