@@ -1,5 +1,5 @@
 # Build stage
-FROM --platform=linux/arm64 node:14 as build
+FROM arm64v8/node as build
 
 WORKDIR /api-xample
 
@@ -12,7 +12,7 @@ COPY . .
 RUN npm test
 
 # Production stage
-FROM --platform=linux/arm64 node:14
+FROM arm64v8/node
 
 WORKDIR /api-xample
 
