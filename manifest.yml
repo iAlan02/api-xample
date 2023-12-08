@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: ruca93/api-xample:9a815bf
+        image: ruca93/api-xample:738934e
         ports:
         - containerPort: 3000
 ---
@@ -30,5 +30,3 @@ spec:
       port: 80
       targetPort: 3000
   type: LoadBalancer
-  externalIPs:
-  - "34.74.203.201"
