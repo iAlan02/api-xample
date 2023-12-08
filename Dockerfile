@@ -1,5 +1,5 @@
 # Set the base image
-FROM node:lts-alpine
+FROM node:20
 
 # Set the working directory
 WORKDIR /api-xample
